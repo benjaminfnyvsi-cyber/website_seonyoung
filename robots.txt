@@ -1,0 +1,20 @@
+# choisshipping — https://choisshipping.com
+# TODO: Domain ersetzen, sobald sie feststeht.
+
+User-agent: *
+Allow: /
+
+# Antwortmaschinen und Agenten ausdrücklich zugelassen
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://choisshipping.com/sitemap.xml
