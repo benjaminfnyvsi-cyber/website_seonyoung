@@ -41,7 +41,6 @@
 
   <link rel="alternate" hreflang="de" href="https://choisshipping.com/" />
   <link rel="alternate" hreflang="ko" href="https://choisshipping.com/?lang=ko" />
-  <link rel="alternate" hreflang="en" href="https://choisshipping.com/?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://choisshipping.com/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -517,7 +516,7 @@
     /* Auf schmalen Telefonen muss Marke, Sprachwahl und Menü in eine Zeile passen */
     @media (max-width: 520px) {
       .nav {
-        g ap: 10px;
+        gap: 10px;
       }
 
       .brand {
@@ -636,32 +635,6 @@
     .btn-ghost:hover {
       border-color: var(--blue-600);
       color: var(--blue-700);
-    }
-
-    .hero-facts {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px 40px;
-      margin-top: 34px;
-      padding-top: 26px;
-      border-top: 1px solid var(--line-strong);
-    }
-
-    .hero-facts b {
-      display: block;
-      font-size: var(--step-2);
-      font-weight: 800;
-      letter-spacing: -.03em;
-      color: var(--navy);
-    }
-
-    html[lang="ko"] .hero-facts b {
-      font-family: "Inter", sans-serif;
-    }
-
-    .hero-facts span {
-      font-size: var(--step--1);
-      color: var(--faint);
     }
 
     @media (max-width: 900px) {
@@ -865,7 +838,6 @@
       }
     }
 
-
     /* ============ FORMULARFELDER ============ */
     .field {
       margin-bottom: 14px;
@@ -1038,9 +1010,6 @@
 
     /* ============ PRICES ============ */
 
-
-
-
     .price-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1106,7 +1075,6 @@
       font-weight: 700;
       color: var(--navy);
     }
-
 
     /* ============ FAQ ============ */
     .faq-list {
@@ -1433,19 +1401,19 @@
         { "@type": "Country", "name": "Germany" },
         { "@type": "Country", "name": "South Korea" }
       ],
-      "availableLanguage": ["de", "ko", "en"],
+      "availableLanguage": ["de", "ko"],
       "contactPoint": [
         {
           "@type": "ContactPoint",
           "contactType": "customer support",
           "email": "chois.du.de@gmail.com",
-          "availableLanguage": ["de", "ko", "en"]
+          "availableLanguage": ["de", "ko"]
         },
         {
           "@type": "ContactPoint",
           "contactType": "sales",
           "email": "chois.du.de@gmail.com",
-          "availableLanguage": ["de", "ko", "en"]
+          "availableLanguage": ["de", "ko"]
         }
       ]
     },
@@ -1504,7 +1472,7 @@
       "@id": "https://choisshipping.com/#website",
       "url": "https://choisshipping.com/",
       "name": "choisshipping",
-      "inLanguage": ["de", "ko", "en"],
+      "inLanguage": ["de", "ko"],
       "publisher": { "@id": "https://choisshipping.com/#org" },
       "about": { "@id": "https://choisshipping.com/#service" }
     },
@@ -1517,7 +1485,7 @@
           "name": "Wie lange dauert der Versand nach Südkorea?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Luftfracht erreicht Südkorea in der Regel in 7 bis 10 Werktagen ab Abflug, Express in 3 bis 5 Werktagen, Seefracht in 35 bis 45 Tagen. Dazu kommen ein bis zwei Werktage für Wareneingang und Verpackung im Lager sowie die Verzollung in Korea."
+            "text": "Luftfracht erreicht Südkorea in der Regel in 7 bis 10 Werktagen ab Abflug."
           }
         },
         {
@@ -1587,7 +1555,6 @@
           </svg>
           <button type="button" data-lang="de" aria-pressed="true">DE</button>
           <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
-          <button type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
         <a href="#kontakt" class="btn btn-primary nav-cta-desktop" data-i18n="nav.cta">Angebot anfragen</a>
         <button class="menu-btn" id="menuBtn" aria-label="Menü" aria-expanded="false" aria-controls="navLinks">
@@ -1614,11 +1581,6 @@
           <div class="hero-cta">
             <a href="#lieferantrag" class="btn btn-primary btn-lg" data-i18n="hero.cta1">Lieferantrag ausfüllen</a>
             <a href="#ablauf" class="btn btn-ghost btn-lg" data-i18n="hero.cta2">So läuft es ab</a>
-          </div>
-          <div class="hero-facts">
-            <div><b>7–10</b><span data-i18n="hero.f1">Werktage per Luftfracht</span></div>
-            <div><b>DE ↔ KR</b><span data-i18n="hero.f2">Beide Richtungen</span></div>
-            <div><b>24 h</b><span data-i18n="hero.f3">Antwort auf Ihre Anfrage</span></div>
           </div>
         </div>
       </div>
@@ -1781,16 +1743,10 @@
                   <input id="rLast" name="rLast" type="text" autocomplete="section-empfaenger family-name" required />
                 </div>
               </div>
-              <div class="row-street">
-                <div class="field">
-                  <label for="rStreet" data-i18n-html="f.street">Straße <span class="req">*</span></label>
-                  <input id="rStreet" name="rStreet" type="text" autocomplete="section-empfaenger address-line1"
-                    required />
-                </div>
-                <div class="field">
-                  <label for="rNo" data-i18n-html="f.no">Hausnr. <span class="req">*</span></label>
-                  <input id="rNo" name="rNo" type="text" inputmode="numeric" required />
-                </div>
+              <div class="field">
+                <label for="rStreet" data-i18n-html="f.street">Straße <span class="req">*</span></label>
+                <input id="rStreet" name="rStreet" type="text" autocomplete="section-empfaenger address-line1"
+                  required />
               </div>
               <div class="row-city">
                 <div class="field">
@@ -2047,8 +2003,7 @@
                     <path d="M12 5v14M5 12h14" />
                   </svg></span></button></h3>
             <div class="faq-a" data-i18n="faq.a1">Luftfracht erreicht Korea in der Regel in 7 bis 10 Werktagen ab
-              Abflug, Express in 3 bis 5 Werktagen, Seefracht in 35 bis 45 Tagen. Dazu kommen ein bis zwei Werktage für
-              Wareneingang und Verpackung sowie die Verzollung in Korea.</div>
+              Abflug.</div>
           </div>
           <div class="faq-item">
             <h3><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.q3">Wie berechnet sich
@@ -2056,10 +2011,9 @@
                     stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
                     <path d="M12 5v14M5 12h14" />
                   </svg></span></button></h3>
-            <div class="faq-a" data-i18n="faq.a3">Der Preis besteht aus 6,00 € Grundgebühr pro Sendung und 4,20 € je
-              Kilogramm. Ein Paket mit 1 kg kostet also 10,20 €, eines mit 10 kg 48,00 €. Die vollständige Liste bis 20
-              kg steht auf dieser Seite. Verbindlich wird der Preis, sobald wir im Lager gewogen und vermessen haben —
-              erst danach zahlen Sie.</div>
+            <div class="faq-a" data-i18n="faq.a3">Verbindlich wird der Preis, sobald wir im Lager gewogen und vermessen
+              haben — erst danach zahlen Sie. Nach dem Vermessen gilt der höhere Wert aus Gewichtspreis und
+              Volumenpreis.</div>
           </div>
           <div class="faq-item">
             <h3><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.q4">Fallen in Korea Zoll
@@ -2236,7 +2190,7 @@
         "price.title": "Preise",
         "price.hW": "Gewicht",
         "price.hP": "Preis",
-        "faq.a3": "Der Preis besteht aus 6,00 € Grundgebühr pro Sendung und 4,20 € je Kilogramm. Ein Paket mit 1 kg kostet also 10,20 €, eines mit 10 kg 48,00 €. Die vollständige Liste bis 20 kg steht auf dieser Seite. Verbindlich wird der Preis, sobald wir im Lager gewogen und vermessen haben — erst danach zahlen Sie.",
+        "faq.a3": "Verbindlich wird der Preis, sobald wir im Lager gewogen und vermessen haben — erst danach zahlen Sie. Nach dem Vermessen gilt der höhere Wert aus Gewichtspreis und Volumenpreis.",
         "steps.eyebrow": "In sechs Schritten",
         "steps.sub": "Vom ausgefüllten Lieferantrag bis zur Zustellung in Korea — jeder Schritt ist abgestimmt, bevor der nächste beginnt.",
         "flow.t1": "Antrag ausfüllen",
@@ -2279,9 +2233,6 @@
         "steps.imgAlt": "Zwei choisshipping-Kartons auf einem Tisch, im Hintergrund ein startendes Flugzeug am Flughafenfenster",
         "nav.cta": "Angebot anfragen",
         "hero.cta2": "So läuft es ab",
-        "hero.f1": "Werktage per Luftfracht",
-        "hero.f2": "Beide Richtungen",
-        "hero.f3": "Antwort auf Ihre Anfrage",
         "footer.c1": "Seite",
         "footer.l9": "Angebot anfragen",
         "footer.l10": "Privatsendungen",
@@ -2300,7 +2251,7 @@
 
         "faq.eyebrow": "Gut zu wissen", "faq.title": "Häufige Fragen",
         "faq.q1": "Wie lange dauert der Versand nach Südkorea?",
-        "faq.a1": "Luftfracht erreicht Korea in der Regel in 7 bis 10 Werktagen ab Abflug, Express in 3 bis 5 Werktagen, Seefracht in 35 bis 45 Tagen. Dazu kommen ein bis zwei Werktage für Wareneingang und Verpackung sowie die Verzollung in Korea.",
+        "faq.a1": "Luftfracht erreicht Korea in der Regel in 7 bis 10 Werktagen ab Abflug.",
         "faq.q3": "Wie berechnet sich der Preis?",
         "faq.q4": "Fallen in Korea Zoll und Einfuhrsteuer an?",
         "faq.a4": "Persönliche Sendungen sind in Südkorea bis 150 USD Warenwert zollfrei. Darüber erhebt der koreanische Zoll Abgaben, die die empfangende Person zahlt. Für die Einfuhr wird eine persönliche Zollnummer benötigt. Für Unternehmen übernehmen wir die komplette Abwicklung inklusive Handelsrechnung und Ursprungsnachweis.",
@@ -2332,7 +2283,7 @@
         "price.title": "요금",
         "price.hW": "무게",
         "price.hP": "요금",
-        "faq.a3": "건당 기본요금 6,00유로에 kg당 4,20유로가 더해집니다. 1kg은 10,20유로, 10kg은 48,00유로입니다. 20kg까지의 전체 요금표는 이 페이지에 있습니다. 창고에서 무게와 크기를 실측한 뒤 금액이 확정되며, 결제는 그다음입니다.",
+        "faq.a3": "창고에서 무게와 크기를 실측한 뒤 금액이 확정되며, 결제는 그다음입니다. 실측 후 무게 가격과 부피 가격 중 더 높은 가격으로 측정됩니다.",
         "steps.eyebrow": "여섯 단계",
         "steps.sub": "배송 신청서 작성부터 한국 수령까지, 각 단계는 확인을 거친 뒤 다음으로 넘어갑니다.",
         "flow.t1": "신청서 작성",
@@ -2375,9 +2326,6 @@
         "steps.imgAlt": "테이블 위에 놓인 초이스쉬핑 상자 두 개, 창밖으로 이륙하는 비행기가 보입니다",
         "nav.cta": "견적 문의",
         "hero.cta2": "진행 절차 보기",
-        "hero.f1": "항공 배송 영업일",
-        "hero.f2": "양방향 운영",
-        "hero.f3": "문의 답변 시간",
         "footer.c1": "메뉴",
         "footer.l9": "견적 문의",
         "footer.l10": "개인 배송",
@@ -2396,7 +2344,7 @@
 
         "faq.eyebrow": "안내", "faq.title": "자주 묻는 질문",
         "faq.q1": "한국까지 얼마나 걸리나요?",
-        "faq.a1": "항공은 출발 후 보통 7~10 영업일, 특송은 3~5 영업일, 해상은 35~45일이 걸립니다. 여기에 입고와 포장에 1~2 영업일, 그리고 한국 통관 시간이 더해집니다.",
+        "faq.a1": "항공은 출발 후 보통 7~10 영업일이 걸립니다.",
         "faq.q3": "배송비는 어떻게 계산되나요?",
         "faq.q4": "한국에서 관세와 부가세가 나오나요?",
         "faq.a4": "개인 사용 목적의 물품은 물품가액 150달러까지 면세입니다. 그 이상은 한국 세관이 세금을 부과하며 수령인이 납부합니다. 통관에는 개인통관고유부호가 필요합니다. 기업 화물은 상업송장과 원산지증명을 포함해 저희가 전부 처리합니다.",
@@ -2422,106 +2370,10 @@
         "mail.contactSubject": "웹사이트 문의",
         "mail.l.email": "이메일",
         "mail.l.name": "이름", "mail.l.type": "문의 유형", "mail.l.msg": "내용"
-      },
-
-      en: {
-        "price.title": "Prices",
-        "price.hW": "Weight",
-        "price.hP": "Price",
-        "faq.a3": "The price is a base fee of 6,00 € per shipment plus 4,20 € per kilogram. A 1 kg parcel costs 10,20 €, a 10 kg parcel 48,00 €. The full list up to 20 kg is on this page. The price becomes binding once we have weighed and measured the shipment at the warehouse — you pay after that.",
-        "steps.eyebrow": "Six steps",
-        "steps.sub": "From the completed shipping form to delivery in Korea — every step is confirmed before the next one starts.",
-        "flow.t1": "Submit the form",
-        "flow.d1": "You fill in the shipping form with sender and recipient.",
-        "flow.t2": "Arrival at the warehouse",
-        "flow.d2": "Your parcel reaches our warehouse and is logged.",
-        "flow.t3": "Measuring and payment",
-        "flow.d3": "We measure size and weight and send you the price.",
-        "flow.t4": "Dispatch after payment",
-        "flow.d4": "Once payment arrives, the shipment leaves by air or sea freight.",
-        "flow.t5": "Customs clearance",
-        "flow.d5": "The shipment passes customs in the destination country.",
-        "flow.t6": "Delivery",
-        "flow.d6": "The parcel arrives at the address you chose.",
-        "form.ok": "Enquiry sent. We reply within 24 hours.",
-        "form.failFallback": "Automatic sending failed — your email app has been opened.",
-        "nav.form": "Shipping form",
-        "hero.cta1": "Fill in the shipping form",
-        "hero.imgAlt": "Berlin Cathedral on the river Spree with sightseeing boats",
-        "ship.eyebrow": "Book a shipment",
-        "ship.title": "Shipping request form",
-        "ship.sender": "Sender",
-        "ship.senderHint": "Who is sending the parcel?",
-        "ship.recipient": "Recipient",
-        "ship.recipientHint": "Who receives the parcel?",
-        "f.first": "First name <span class=\"req\">*</span>",
-        "f.last": "Last name <span class=\"req\">*</span>",
-        "f.street": "Street <span class=\"req\">*</span>",
-        "f.no": "No. <span class=\"req\">*</span>",
-        "f.zip": "Postcode <span class=\"req\">*</span>",
-        "f.city": "City <span class=\"req\">*</span>",
-        "f.phone": "Mobile number <span class=\"req\">*</span>",
-        "f.mail": "Email address <span class=\"req\">*</span>",
-        "f.customs": "Customs ID (EORI number)",
-        "ship.submit": "Send shipping request",
-        "ship.missing": "Please complete every field for sender and recipient.",
-        "ship.ok": "Request sent. We will be in touch within 24 hours.",
-        "ship.fallback": "The Excel sheet was downloaded and your email app opened. Please attach the file and send the message.",
-        "ship.failFallback": "Automatic sending failed. The sheet was downloaded and your email app opened — please attach the file.",
-        "steps.imgAlt": "Two choisshipping cartons on a table, with an aircraft taking off outside the airport window",
-        "nav.cta": "Request a quote",
-        "hero.cta2": "See how it works",
-        "hero.f1": "Working days by air freight",
-        "hero.f2": "Both directions",
-        "hero.f3": "Reply to your enquiry",
-        "footer.c1": "Pages",
-        "footer.l9": "Request a quote",
-        "footer.l10": "Private shipments",
-        "footer.l11": "Business customers",
-        "footer.l12": "Moving and special freight",
-        "a11y.skip": "Skip to content",
-        "brand.tag": "Germany ↔ Korea",
-        "nav.process": "How it works", "nav.prices": "Prices", "nav.faq": "FAQ", "nav.contact": "Contact",
-        "hero.eyebrow": "Shipping Germany ↔ South Korea",
-        "hero.title": "From Germany to Korea,<br /><span class=\"accent\">fast and secure.</span>", "steps.title": "How a shipment runs",
-        "steps.t1": "Get your address", "steps.d1": "After signing up you receive a personal address with a customer number at our warehouse.",
-        "steps.t2": "Intake and photo check", "steps.d2": "We log every delivery, check it for transit damage and upload photos to your account.",
-        "steps.t3": "Request consolidation", "steps.d3": "Several orders are combined into one box and repacked. You give the go-ahead.",
-        "steps.t4": "International transport", "steps.d4": "Express, air or sea freight out of Frankfurt and Hamburg — you choose between speed and price.",
-        "steps.t5": "Arrival in Korea", "steps.d5": "We handle customs clearance, then the shipment goes to the address you chose.",
-
-        "faq.eyebrow": "Good to know", "faq.title": "Frequently asked questions",
-        "faq.q1": "How long does shipping to South Korea take?",
-        "faq.a1": "Air freight usually reaches Korea in 7 to 10 working days after departure, express in 3 to 5 working days, sea freight in 35 to 45 days. Add one to two working days for intake and packing, plus customs clearance in Korea.",
-        "faq.q3": "How is the price calculated?",
-        "faq.q4": "Are duty and import tax charged in Korea?",
-        "faq.a4": "Personal shipments to South Korea are duty free up to a goods value of 150 USD. Above that, Korean customs charges duty and tax, paid by the recipient. Import requires a personal customs clearance number. For companies we handle the entire process including commercial invoice and proof of origin.",
-        "faq.q6": "What cannot be shipped?",
-        "faq.a6": "Excluded are loose lithium batteries, pressurised containers, flammable liquids, weapons, cash, perishable food without a cold chain and counterfeit goods, among others. Cosmetics, supplements and electronics are subject to Korean quantity limits. When in doubt, ask before you order.",
-
-        "contact.eyebrow": "Contact", "contact.title": "Tell us what is on its way",
-        "contact.m1": "Email", "contact.m2": "Business customers", "contact.m3": "KakaoTalk", "contact.m4": "Phone", "contact.m4s": "Mon–Fri 9–18 · +49 000 0000000",
-        "contact.officeT": "Warehouse and office",
-        "contact.officeD": "choisshipping · Lotharstraße 22 · 47057 Duisburg<br />Deliveries accepted: Mon–Fri 8–17",
-
-        "form.name": "Name <span class=\"req\">*</span>", "form.email": "Email <span class=\"req\">*</span>",
-        "form.type": "Enquiry as", "form.type1": "Private customer", "form.type2": "Company", "form.type3": "Move or special freight",
-        "form.msg": "What would you like to ship? <span class=\"req\">*</span>", "form.msgPh": "Contents, rough weight and dimensions, preferred date",
-        "form.consent": "I agree that my details may be used to process this enquiry.",
-        "form.submit": "Send enquiry", "form.note": "Opens your email app with everything filled in — you send the message yourself.",
-
-        "footer.about": "Shipping, consolidation and customs clearance between Germany and South Korea — for private customers and companies.",
-        "footer.c2": "Service", "footer.c3": "Contact",
-        "footer.l7": "Frequently asked questions",
-        "footer.addr": "Lotharstraße 22, 47057 Duisburg", "footer.imprint": "Imprint", "footer.privacy": "Privacy", "footer.terms": "Terms",
-
-        "mail.contactSubject": "Enquiry from the website",
-        "mail.l.email": "Email",
-        "mail.l.name": "Name", "mail.l.type": "Enquiry as", "mail.l.msg": "Message"
       }
     };
 
-    const LOCALE = { de: "de-DE", ko: "ko-KR", en: "en-GB" };
+    const LOCALE = { de: "de-DE", ko: "ko-KR" };
     let lang = "de";
     const t = (key) => (I18N[lang] && I18N[lang][key]) || I18N.de[key] || key;
 
@@ -2693,7 +2545,8 @@
       const out = document.getElementById("labelStatus");
       const say = (key, kind) => { out.textContent = t(key); out.className = "form-status show " + kind; };
 
-      const val = (id) => document.getElementById(id).value.trim();
+      // Der Empfänger hat kein Hausnummernfeld — fehlende Felder liefern einen leeren Wert.
+      const val = (id) => { const el = document.getElementById(id); return el ? el.value.trim() : ""; };
       const PARTS = ["First", "Last", "Street", "No", "Zip", "City", "Phone", "Mail"];
 
       form.addEventListener("submit", async (ev) => {
@@ -2702,6 +2555,7 @@
         for (const side of ["s", "r"]) {
           for (const part of PARTS) {
             const el = document.getElementById(side + part);
+            if (!el) continue;
             if (!el.value.trim() || !el.checkValidity()) {
               el.focus();
               el.style.borderColor = "#B91C1C";
@@ -2728,7 +2582,7 @@
           ["Vorname", a.first, e.first],
           ["Nachname", a.last, e.last],
           ["Straße", a.street, e.street],
-          ["Hausnummer", a.no, e.no],
+          ["Hausnummer", a.no, ""],
           ["Postleitzahl", a.zip, e.zip],
           ["Stadt", a.city, e.city],
           ["Zolltarifnummer (통관번호)", "", e.customs]
@@ -2740,7 +2594,7 @@
           `Neuer Lieferantrag über choisshipping (${today.toLocaleDateString("de-DE")})\n\n` +
           `ABSENDER\n${a.first} ${a.last}\n${a.street} ${a.no}\n${a.zip} ${a.city}\n` +
           `Handynummer: ${a.phone}\nE-Mail: ${a.mail}\n\n` +
-          `EMPFÄNGER\n${e.first} ${e.last}\n${e.street} ${e.no}\n${e.zip} ${e.city}\n` +
+          `EMPFÄNGER\n${e.first} ${e.last}\n${e.street}\n${e.zip} ${e.city}\n` +
           `Handynummer: ${e.phone}\nE-Mail: ${e.mail}\n` +
           `Zolltarifnummer (통관번호): ${e.customs || "—"}\n\n` +
           `Die Adressen liegen als Excel-Tabelle bei: ${fileName}`;
